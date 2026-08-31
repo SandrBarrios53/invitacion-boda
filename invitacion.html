@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitacion de Boda</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #tarjeta {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            min-height: 600px;
+            background-image: url('fondo tarjeta.png');
+            background-size: cover;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #foto-contenedor {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            left: 225px;
+            top: 100px;
+            cursor: pointer;
+        }
+        #mitad-izquierda {
+            position: absolute;
+            width: 175px;
+            height: 350px;
+            background-image: url('foto2.jpeg');
+            background-size: 350px 350px;
+            background-position: left;
+        }
+        #mitad-derecha {
+            position: absolute;
+            left: 175px;
+            width: 175px;
+            height: 350px;
+            background-image: url('foto2.jpeg');
+            background-size: 350px 350px;
+            background-position: right;
+        }
+        #texto {
+            position: absolute;
+            width: 250px;
+            text-align: center;
+            left: 255px;
+            top: 65px;
+            opacity: 0;
+            font-size: 18px;
+            font-family: 'PinyonScript';
+            pointer-events: none;
+        }
+        #boton {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #7a9e7e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        @keyframes abrir-izquierda {
+            from { transform: translateX(0); }
+            to { transform: translateX(-175px); }
+        }
+        @keyframes abrir-derecha {
+            from { transform: translateX(0); }
+            to { transform: translateX(175px); }
+        }
+        @keyframes aparecer {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @font-face {
+            font-family: 'PinyonScript';
+            src: url('PinyonScript-Regular.ttf');
+        }
+    </style>
+</head>
+<body>
+    <div id="tarjeta">
+        <div id="foto-contenedor">
+            <div id="mitad-izquierda"></div>
+            <div id="mitad-derecha"></div>
+        </div>
+        <div id="texto">
+            <p><strong>¡Cordón de tres dobleces no se rompe pronto Eclesiastés 4:12!</strong></p>
+            <p><strong>Maria Alejandra y Kevin</strong></p>
+            <p><strong>Queremos que celebres con nosotros nuestra boda</strong></p>
+            <p><strong>Lugar:</strong> por confirmar</p>
+            <p><strong>Fecha:</strong> 21 de noviembre</p>
+            <p><strong>Hora:</strong> 4 pm</p>
+            <p>Traje formal</p>
+            <p><strong>Lluvia de sobres</strong></p>
+            <a href="https://wa.me/573337170317?text=¡Hola👋! Confirmo mi asistencia a la boda💐" target="_blank">
+                <button id="boton">Confirmar Asistencia antes del 21 de septiembre</button>
+            </a>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            var fotoContenedor = document.getElementById('foto-contenedor');
+            fotoContenedor.addEventListener('click', function() {
+                document.getElementById('mitad-izquierda').style.animation = 'abrir-izquierda 1.5s ease forwards';
+                document.getElementById('mitad-derecha').style.animation = 'abrir-derecha 1.5s ease forwards';
+                document.getElementById('texto').style.animation = 'aparecer 1s ease 1.5s forwards';
+            });
+        };
+    </script>
+</body>
+</html>
