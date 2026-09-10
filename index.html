@@ -70,6 +70,18 @@
             pointer-events: auto;
             font-size: 14px;
         }
+        #rotar {
+    display: none;
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+    #rotar {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
         @keyframes abrir-izquierda {
             from { transform: translateX(0); }
             to { transform: translateX(-175px); }
@@ -89,6 +101,9 @@
     </style>
 </head>
 <body>
+    <div id="rotar">
+    📱 Gira tu dispositivo para una mejor experiencia
+</div>
     <div id="tarjeta">
         <div id="foto-contenedor">
             <div id="mitad-izquierda"></div>
@@ -98,7 +113,7 @@
             <p><strong>¡Cordón de tres dobleces no se rompe pronto Eclesiastés 4:12!</strong></p>
             <p><strong>Maria Alejandra y Kevin</strong></p>
             <p><strong>Queremos que celebres con nosotros nuestra boda</strong></p>
-            <p><strong>Lugar:</strong> Parroquia San Simon Stock-Villa del Río.
+            <p><strong>Lugar:</strong> Parroquia San Simón Stock-Villa del Río.
             calle 57 b sur No 69-12</p>
             <p><strong>Fecha:</strong> 21 de noviembre</p>
             <p><strong>Hora:</strong> 4 pm</p>
